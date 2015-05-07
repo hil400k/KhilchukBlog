@@ -1,0 +1,10 @@
+{
+ "dependencies": {
+    "backbone": "*",
+    "jquery": "*",
+    "requirejs": "*",
+    "requirejs-text": "*",
+    "underscore": "*",
+	"bootstrap": "*"
+  }
+}

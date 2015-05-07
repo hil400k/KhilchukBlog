@@ -1,0 +1,251 @@
+.about-page .page-part-1 {
+	background: #a2deca;
+}
+.about-page .page-part-1-content {
+	padding-top: 30px;
+	padding-bottom: 30px;
+	margin: 0 10%;
+}
+.about-page .avatar {
+	border-radius: 50%;
+	border: 5px solid #ffffff;
+	max-height: 200px;
+}
+.about-page .divider {
+	background: #ffffff;
+	height: 1px;
+	width: 100%;
+	margin-top: 20px;
+}
+.about-page .page-part-1-content h3 {
+	font-family: 'Titillium Web', sans-serif;
+	font-weight: 600;
+	color: #ffffff;
+}
+.about-page .page-part-1-content .name {
+	color: #32453f;
+}
+.about-page .introduction>p,
+.about-page .work-experience-content li{
+	font-family: 'Alegreya Sans SC', sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	color: #ffffff;
+}
+.about-page .work-experience-content ul{
+	list-style-type: none;
+	padding-left: 10px;
+}
+.about-page .work-experience-content li:before {
+	content: "";
+	display: block;
+	width: 3px;
+	height: 5px;
+	background: #ffffff;
+	float: left;
+	height: 20px;
+	margin-right: 5px;
+}
+.about-page .page-part-1-content h3:before {
+	float: left;
+	content: "";
+	height: 20px;
+	width: 20px;
+	margin-right: 5px;
+	border-radius: 50%;
+	background: -webkit-linear-gradient(top, #32453f 50%,#ffffff 50%);
+	display: block;
+	margin-top: 4px;
+}
+.about-page .page-part-2 {
+	background: url('../../../images/geo-back.jpg');
+	background-position: left bottom;
+	background-size:contain;
+	width: 100%;
+}
+.about-page .page-part-2-content {
+	width: 100%;
+}
+.about-page .page-part-2-content .row,
+.about-page .page-part-2-content div[class^="col-"]{
+	margin: 0;
+	padding: 0;
+}
+.about-page .page-part-2 .page-part-2-content .left-col {
+	padding-left: 50px;
+	padding-top: 4%;
+	padding-bottom: 4%;
+}
+.about-page .page-part-2 .tech-slider {
+	display: inline-block;
+    position: relative;
+	vertical-align: middle;
+    width: 90%;
+	max-width: 600px;
+}
+.about-page .page-part-2 .dummy {
+    margin-top: 90%;
+}
+.about-page .page-part-2 .wrap {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+	height: 100%;
+	overflow: hidden;
+}
+.about-page .page-part-2 .right-col {
+	text-align: right;
+	line-height: 0;
+	position: relative;
+}
+.about-page .page-part-2 .description {
+	color: #ffffff;
+	font-family: 'Dynalight', cursive;
+	font-size: 24px;
+	line-height: 1;
+	margin-top: 20px;
+	overflow: hidden;
+	padding: 5px;
+    height: 200px;
+	position: relative;
+}
+.about-page .page-part-2 .title-caption {
+	color: #a2deca;
+	font-family: 'Playball';
+	font-size: 48px;
+}
+.about-page .page-part-2 .title-image {
+	max-width: 100%;
+}
+.about-page .page-part-2 .avatar-col {
+	display: inline-block;
+}
+.about-page .page-part-2 .title-col {
+	display: inline-block;
+  	vertical-align: bottom;
+}
+.about-page .page-part-2 .title-col>h3 {
+    margin-bottom: 0;
+	line-height: 0.7em;
+}
+.about-page .page-part-2 .controls {
+	width: 50px;
+	height: 102px;
+	display: inline-block;
+	vertical-align: middle;
+}
+.about-page .page-part-2 .to-top {
+	margin-bottom: 2px;
+	transform: rotateX(180deg);
+}
+.about-page .page-part-2 .to-top,
+.about-page .page-part-2 .to-bottom {
+	height: 50px;
+	width: 100%;
+	background: #a2deca;
+	display: block;
+	position: relative;
+	cursor: pointer;
+}
+.about-page .page-part-2 .to-top:hover,
+.about-page .page-part-2 .to-bottom:hover {
+	background: #84B5A5;
+}
+.about-page .page-part-2 .to-top:active,
+.about-page .page-part-2 .to-bottom:active {
+	background: #32453f;
+}
+.about-page .page-part-2 .to-top img,
+.about-page .page-part-2 .to-bottom img {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+.about-page .tech-slider .part {
+	width: 100%;
+	height: calc(50% - 1px);
+	display: inline-block;
+	margin-bottom:2px;
+	transition: transform 0.5s ease-out;
+}
+.about-page .tech-slider .left,
+.about-page .tech-slider .right {
+	width: calc(50% - 4px);
+	height: 100%;
+	background-color: #ffffff;
+	margin-left: -2px;
+  	margin-right: 0px;
+	display: inline-block;
+	position: relative;
+}
+.about-page .slider-img {
+	max-width: 70%;
+  	max-height: 70%;
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}
+.about-page .full-width {
+    width: 100%;
+}
+.about-page .scroll-bottom-btn,
+.about-page .scroll-top-btn {
+    height: 35px;
+    width: 35px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    border-radius: 100%;
+    background: transparent;
+    border: 4px solid #a2deca;
+    margin-top: 20px;    
+}
+.about-page .scroll-bottom-btn:focus,
+.about-page .scroll-bottom-btn:active,
+.about-page .scroll-top-btn:focus,
+.about-page .scroll-top-btn:active {
+    outline: none !important;
+}
+.about-page .scroll-bottom-btn img {
+    width: 70%;
+}
+.about-page .scroll-top-btn img {
+    width: 70%;
+    transform: rotateX(180deg);
+}
+.about-page .scroll-bottom-btn:hover,
+.about-page .scroll-top-btn:hover {
+    box-shadow: 0px 0px 15px rgba(162, 222, 202, 1);
+}
+@media (max-width: 991px) {
+	.about-page .page-part-2 .right-col {
+		text-align: center;
+	}
+	.about-page .page-part-2 .tech-slider {
+		width: 70%;
+	}
+	.about-page .page-part-2 .page-part-2-content .left-col {
+		padding-left: 10%;
+		padding-right: 10%;
+	}
+}
+@media (max-width: 767px) {
+	.about-page .page-part-1-content {
+		padding-top: 180px;
+	}
+    .about-page .description-controls {
+        display: none;
+    }
+    .about-page .page-part-2 .description {
+        height: auto;
+    }
+}

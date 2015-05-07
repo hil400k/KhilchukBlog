@@ -1,0 +1,68 @@
+#footer .footer-container {
+	height: 200px;
+	background: #32453f;
+}
+#footer .footer-content {
+    height: 100%;
+    width: 40%;
+    display: inline-block;
+    font-size: 14px;
+}
+#footer .to-top-circle {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    background: #32453f;
+    border: 1px solid #a2deca;
+    display: inline-block;
+    color: #a2deca;
+    margin-top: 30px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    background-image:url(../../../images/top-anchor.png);
+    background-size: 100%;
+    background-size: 100%;
+    background-position-y: 300%;
+    background-repeat: no-repeat;
+    transition: all .3s linear;
+    -webkit-transition: all .3s linear;
+}
+#footer .to-top-circle:hover {
+    color: rgba(162, 222, 202, 0.23);
+    background-position-y: 180%;
+    box-shadow: 0 0 15px rgba(162, 222, 202, 0.34);
+}
+#footer .to-top-circle>span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    height: 25px;
+}
+#footer .divider {
+    height: 1px;
+    width: 100%;
+    background: #63887c;
+    margin-top: 20px;
+}
+#footer .footer-contacts {
+    color: #63887c;
+}
+#footer .footer-contacts a:hover {
+    color: #a2deca;
+}
+#footer .footer-contacts a {
+    color: #63887c;
+}
+#footer .footer-contacts *:not(:last-child) {
+    border-right: 1px solid #63887c;
+    padding-right: 3px;
+}
+@media (max-width: 480px) {
+    #footer .to-top-circle {
+        margin-top: 20px;  
+    }
+}
