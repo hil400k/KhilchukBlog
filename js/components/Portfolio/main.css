@@ -1,0 +1,68 @@
+.portfolio-page .page-content {
+	padding-top: 30px;
+	padding-bottom: 30px;
+	margin: 0 10%;
+}
+.portfolio-page {
+	background: #ffffff;
+}
+.portfolio-page .page-title {
+    margin-top: 30px;
+}
+.portfolio-page .page-title h1{
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-weight: 100;
+    font-size: 48px;
+    color: #a2deca;
+}
+.portfolio-page .page-title span {
+    font-style: italic;
+    color: black;
+}
+.portfolio-page .slides-container {
+    width: 100%;
+    height: 64vh;
+}
+.portfolio-page .slider-maximized-img {
+    width: 100%;
+    height: 64vh;
+}
+.portfolio-page .img-wraper {
+    height: 80%;
+    width: 100%;
+    border-left: 4px solid #a2deca;
+    border-top: 4px solid #a2deca;
+    border-right: 4px solid #a2deca;
+}
+.portfolio-page .project-title {
+    color: #5c6864;
+    padding: 0 10px;
+}
+.portfolio-page .top-slide,
+.portfolio-page .bottom-slide {
+    border: 4px solid #ffffff;
+    outline: 4px solid #a2deca;
+    height: 40%;
+    margin-top: 10%;
+    width: 100%;
+    position: relative;
+}
+.portfolio-page .forward-button,
+.portfolio-page .back-button {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 4px solid #a2deca;
+    box-shadow: 0 0 0 4px #fff;
+    background: #ffffff;
+}
+.portfolio-page .back-button {
+    bottom: -30px;
+}
+.portfolio-page .forward-button {
+    top: -30px;
+}

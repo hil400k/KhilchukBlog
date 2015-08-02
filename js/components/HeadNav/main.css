@@ -23,6 +23,7 @@
 	padding-right: 30px;
 	font-family: 'Arial';
 	color: #00362a;
+    outline: none;
 }
 #header {
 	position: fixed;
@@ -44,6 +45,12 @@
 }
 
 @media (max-width: 767px) {
+    #header .top-line {
+        width: 100%;
+        background: #ffffff;
+        height: 5px;
+        position: fixed;
+    }
     #header #navbar {
         margin-left: 70px;
         display: none;
@@ -62,7 +69,7 @@
     #header .navbar-style {
         background: transparent; /* HERE */
         border: none; /* HERE */
-        width: 70px; /* HERE */
+        width: 0px; /* HERE */
         padding-top: 0;
         padding-bottom: 0;
         margin-bottom: 0;
@@ -81,7 +88,7 @@
         width: 70px;
         position: absolute;
         left: 0;
-        background: rgba(118, 145, 136, 0.2);
+        background: #ffffff;
         height: 100%;
         display: block;
     }
@@ -96,20 +103,37 @@
         right: 0;
         bottom: 0;
         display: block;
+        text-align: center;
     }
-    #header .menu-button span {
+    #header .square>span {
+        font-size: 11px;
         width: 100%;
-        height: 20%;
+        left: 0;
+        position: absolute;
+        font-family: 'Titillium Web';
+        font-weight: bold;
+        color: #a2deca;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    #header .menu-logo {
+        display: block;
+        height: 60%;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+    }
+    #header .menu-logo span {
+        width: 100%;
+        height: 4px;
         background: #a2deca;
         display: block;
-        transition: transform .3s linear;
-        -webkit-transition: -webkit-transform .3s linear;
     }
-    #header .menu-button:hover span:nth-child(2) {
-        transform: scaleY(2);
-        -webkit-transform: scaleY(2);
-    }
-    #header .menu-button span:not(:first-child) {
-        margin-top: 20%;
+    #header .menu-logo span:not(:first-child) {
+        margin-top: 10%;
     }
 }

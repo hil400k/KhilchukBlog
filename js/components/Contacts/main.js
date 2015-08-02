@@ -14,7 +14,8 @@ define([
         el: '#page',
         
         events: {
-            'click .reviews-block-button': 'buttonHandler'
+            'click .reviews-block-button': 'buttonHandler',
+            'keypress .input-component textarea': 'inputHandler'
         },
         
 		initialize: function (options) {
@@ -40,8 +41,49 @@ define([
             });
         },
         
+        inputHandler: function(e) {
+            var tarea = e.currentTarget, content = tarea.value, caret = null,
+                $button = this.$el.find('.input-component button');
+            
+            
+            if (e.keyCode == 13 && e.shiftKey) {   
+                if ($button.text() === 'SEND') {
+                    caret = this.getCaret(tarea);
+                    tarea.value = content.substring(0, caret);
+                    e.stopPropagation();
+                } else {
+                    e.preventDefault();
+                    this.buttonHandler();
+                }
+            } else if(e.keyCode == 13) {
+                e.preventDefault();
+                this.buttonHandler();
+            }
+        },
+        
+        getCaret: function (el) {
+            if (el.selectionStart) { 
+                return el.selectionStart; 
+            } else if (document.selection) { 
+                el.focus(); 
+
+                var r = document.selection.createRange(); 
+                if (r == null) { 
+                    return 0; 
+                } 
+
+                var re = el.createTextRange(), 
+                    rc = re.duplicate(); 
+                re.moveToBookmark(r.getBookmark()); 
+                rc.setEndPoint('EndToStart', re); 
+
+                return rc.text.length; 
+            }  
+            return 0; 
+        },
+        
         buttonHandler: function (e) {
-            var $button = $(e.currentTarget),
+            var $button = this.$el.find('.input-component button'),
                 $tarea = this.$el.find('.input-component textarea'),
                 text, option, placeholder;
                     

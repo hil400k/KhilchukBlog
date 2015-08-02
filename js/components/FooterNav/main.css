@@ -22,15 +22,14 @@
     overflow: hidden;
     background-image:url(../../../images/top-anchor.png);
     background-size: 100%;
-    background-size: 100%;
-    background-position-y: 300%;
+    background-position: 0% 300%;
     background-repeat: no-repeat;
     transition: all .3s linear;
     -webkit-transition: all .3s linear;
 }
 #footer .to-top-circle:hover {
     color: rgba(162, 222, 202, 0.23);
-    background-position-y: 180%;
+    background-position: 0% 180%;
     box-shadow: 0 0 15px rgba(162, 222, 202, 0.34);
 }
 #footer .to-top-circle>span {
