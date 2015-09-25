@@ -4,7 +4,7 @@ define([
 	'Underscore',
 	'Backbone',
     './message'
-], function (module, $, _, Backbone, Message) {
+], function(module, $, _, Backbone, Message) {
 	var Messages;
 	
 	Messages = Backbone.Collection.extend({

@@ -8,6 +8,7 @@
 }
 .portfolio-page .page-title {
     margin-top: 30px;
+    margin-bottom: 20px;
 }
 .portfolio-page .page-title h1{
     font-family: 'Alegreya Sans SC', sans-serif;
@@ -19,9 +20,16 @@
     font-style: italic;
     color: black;
 }
+.portfolio-page .slides-wrap,
 .portfolio-page .slides-container {
     width: 100%;
-    height: 64vh;
+    height: 54vh;
+    background: #a2deca;
+    box-shadow: 0 0 0 4px #a2deca;
+    position: relative;
+}
+.portfolio-page .slides-wrap {
+    overflow: hidden;
 }
 .portfolio-page .slider-maximized-img {
     width: 100%;
@@ -33,19 +41,38 @@
     border-left: 4px solid #a2deca;
     border-top: 4px solid #a2deca;
     border-right: 4px solid #a2deca;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.portfolio-page .project-title h3 {
+    text-transform: uppercase;
 }
 .portfolio-page .project-title {
     color: #5c6864;
     padding: 0 10px;
-}
-.portfolio-page .top-slide,
-.portfolio-page .bottom-slide {
-    border: 4px solid #ffffff;
-    outline: 4px solid #a2deca;
-    height: 40%;
-    margin-top: 10%;
-    width: 100%;
     position: relative;
+    top: -12vh;
+}
+.portfolio-page .slide {
+    border: 4px solid #ffffff;
+    height: calc(50% - 2px);
+    width: 100%;
+    margin-bottom: 4px;
+    transition: transform 0.5s;
+    position: relative;
+    cursor: pointer;
+}
+.portfolio-page .slide > .back {
+    transition: all 0.2s;
+}
+.portfolio-page .slide:hover > .back {
+    background: rgba(0, 54, 42, 0.7);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 .portfolio-page .forward-button,
 .portfolio-page .back-button {
@@ -62,7 +89,136 @@
 }
 .portfolio-page .back-button {
     bottom: -30px;
+    background: #a2deca;
+    transition: all 0.5s;
+    cursor: pointer
 }
 .portfolio-page .forward-button {
     top: -30px;
+    background: #a2deca;
+    transition: all 0.2s;
+    cursor: pointer;
+    z-index: 2;
+}
+.portfolio-page .forward-button:hover,
+.portfolio-page .back-button:hover {
+    background: #145e46;
+}
+
+.portfolio-page .back-button img,
+.portfolio-page .forward-button img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;    
+    width: 60%;
+    height: 25%;
+}
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.portfolio-page .forward-button img {
+    transform: rotate(180deg);
+}
+.portfolio-page .project-box {
+    display: block;
+    width: 100%;
+    height: 100%;    
+}
+.portfolio-page .hr-line {
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%,rgba(255, 255, 255, 0.72) 35%,rgba(255, 255, 255, 0.7) 50%,rgba(255, 255, 255, 0.72) 65%,rgba(255, 255, 255, 0) 100%); 
+    position: absolute;
+    bottom: 10%;
+    transition: all 0.5s;
+    opacity: 0;
+}
+.portfolio-page .slide:hover .hr-line {
+    bottom: 38%;
+    opacity: 1;
+}
+.portfolio-page .slide:hover h4 {
+    opacity: 1;
+    bottom: 35%;
+    text-shadow: 0 0 0 #fff;
+    color: #fff;
+    cursor: pointer;
+}
+.portfolio-page .slide h4 {
+    color: transparent;
+    text-transform: uppercase;
+    display: block;
+    position: absolute;
+    bottom: 20%;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-weight: 400;
+    text-shadow: 0 0 20px #fff;
+    text-align: center;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.5s;
+}
+.portfolio-page .loader-back {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.9);   /* back */
+}
+.spinner {
+  width: 40px;
+  height: 40px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  position: absolute;
+  margin: auto;
+}
+.double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #333;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;  
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+.double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+@-webkit-keyframes sk-bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+@keyframes sk-bounce {
+  0%, 100% { 
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% { 
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+@media (max-width: 768px) {
+    .portfolio-page .slides-container {
+        
+    }
+    .portfolio-page .img-wraper {
+        margin: 40px 0px 0px -4px;
+        width: calc(100% + 8px);
+    }
 }
