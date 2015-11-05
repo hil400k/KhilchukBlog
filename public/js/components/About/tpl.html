@@ -1,0 +1,81 @@
+<div class="about-page">
+	<div class="page-part page-part-1">
+		<div class="container-fluide page-part-1-content">
+			<div class="top-part">
+				<div class="row">
+					<div class="col-md-4">
+						<img class="avatar" src="../../../images/avatar.png">
+					</div>
+					<div class="col-md-8">
+						<h3><spam class="name">DIMA</spam> <span class="surname">KHILCHUK</span>
+						    <button type="button" data-toggle="modal" data-target="#myModal" class="btn admin-edit-btn" id="personalInfo"><span class="glyphicon glyphicon-pencil"></span></button>
+						</h3>
+						<div class="introduction">
+							<p>
+								<%=personalInfo %>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="divider"></div>
+			<div class="bottom-part">
+				<div class="row">
+					<div class="col-md-4"></div>
+					<div class="col-md-8">
+						<h3><spam class="name">WORK</spam> <span class="surname">EXPERIENCE</span>
+						    <button type="button" data-toggle="modal" data-target="#myModal" class="btn admin-edit-btn" id="workItems"><span class="glyphicon glyphicon-pencil"></span></button>
+						</h3>
+						<div class="work-experience-content">
+							<ul>
+							    <% _.each(workItems, function (wi) { %>
+                                    <li class="w-e-item"><%= wi %></li>
+							    <% }); %>								
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="page-part page-part-2">
+		<div class="container-fluide page-part-2-content">
+		<div class="row">
+			<div class="col-md-5 left-col">
+				<div class="row">
+						<div class="what-i-use-container">
+							<div class="avatar-col">
+								<img class="title-image" src="../../../images/what.png" alt="">
+							</div>
+							<div class="title-col">
+								<h3 class="title-caption">I use
+								    <button type="button" data-toggle="modal" data-target="#myModal" class="btn admin-edit-btn" id="wiu"><span class="glyphicon glyphicon-pencil"></span></button>
+								</h3>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="description">
+								<%=wiu %>
+							</div>
+							<div class="text-center description-controls full-width">
+							     <button class="btn scroll-bottom-btn">
+							         <img src="../../../images/arrow-top.png" alt="">
+							     </button>
+							     <button class="btn scroll-top-btn">
+							         <img src="../../../images/arrow-top.png" alt="">
+							     </button>
+							</div>
+						</div>
+					</div>
+				</div>
+			<div class="col-md-7 right-col">
+				<div class="slider-wrapper">					
+				</div>
+			</div>
+		</div>
+
+		</div>
+	</div>
+</div>

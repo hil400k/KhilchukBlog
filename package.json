@@ -5,6 +5,10 @@
     "requirejs": "*",
     "requirejs-text": "*",
     "underscore": "*",
-	"bootstrap": "*"
+	"bootstrap": "*",
+    "express": "*",
+    "ejs": "*",
+    "mongoose": "*",
+    "body-parser": "*"
   }
 }
