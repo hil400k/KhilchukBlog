@@ -20,6 +20,7 @@ define([
         
 		initialize: function (options) {
             self = this;
+            this.$el.off();
 			this.render();
 			options.styleLoader(module);
             this.startBubblesAnimation();

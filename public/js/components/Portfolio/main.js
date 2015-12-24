@@ -20,6 +20,7 @@ define([
         
 		initialize: function (options) {
             var self = this;
+            this.$el.off();
             this.slideHeight = 0;
             this.slidesAbove = 0;
 			this.render();

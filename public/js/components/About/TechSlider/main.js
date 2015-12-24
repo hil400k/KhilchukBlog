@@ -3,34 +3,57 @@ define([
 	'jQuery',
 	'Underscore',
 	'Backbone',
+    'EventsManager',
+    '../AdminViews/WiuImages/main',
+    '../sliderModel',
 	'text!./tpl.html'
-], function (module, $, _, Backbone, tpl) {
+], function (module, $, _, Backbone, EventsManager, wiuImages, sliderModel, tpl) {
 	var component, self;
 	
 	component = Backbone.View.extend({
 		
 		events: {
 			'click .to-bottom ': 'nextPage',
-			'click .to-top': 'previousPage'
+			'click .to-top': 'previousPage',
+            'click #wiuImages': 'editWiuImages'
 		},
+        
+        model: new sliderModel(),
 		
 		initialize: function (options) {
 			self = this;
 			$(window).on('resize', function (){ self.resizeSlider(); });
 			this.topPage = 0;
-			this.render();
+            this.model.fetch({
+                success: function () {
+                    self.render();
+                }
+            });	
+            
 		}, 
 		
 		render: function () {
-			this.$el.html(_.template(tpl));
+            var compile = _.template(tpl);
+			this.$el.html(compile(this.model.toJSON()));
+            this.model.on('change', this.render, this);
 		},
+        
+        editWiuImages: function () {
+            EventsManager.trigger('admin:edit', {
+                view: wiuImages,
+                model: this.model
+            });
+        },        
 		
 		resizeSlider: function () {
 			this.$el.find('.part').css('transform', 'translateY(0)');
+            this.topPage = 0;
 		},
 		
 		nextPage: function() {
-			if (this.topPage <= 1) {
+            var n = 0;
+            ((this.model.get('paths').length - 4) % 2 === 0) ? n = (this.model.get('paths').length - 4) / 2 - 1 : n = (this.model.get('paths').length - 4) / 2;
+			if (this.topPage <= n){
 				this.topPage ++;
 			} else {
 				return;

@@ -13,13 +13,18 @@ define([
         el: '#modal',
 
 		initialize: function (options) {
+            this.subView = {};
 			this.render();
 			options.styleLoader(module);
-            EventsManager.on('admin:edit', this.adminEditing, this);            
+            EventsManager.on('admin:edit', this.adminEditing, this);
 		}, 
         
         adminEditing: function (data) {
-            var view = new data.view({model: data.model, el: '.modal-content'});
+            var self = this;
+            this.subView = new data.view({model: data.model, el: '.modal-content'});
+            this.$el.find('#myModal').on('hidden.bs.modal', function (e) {
+                self.subView.$el.unbind();
+            })
         },
         
 		render: function () {

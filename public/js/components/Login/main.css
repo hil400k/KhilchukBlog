@@ -1,0 +1,11 @@
+#my-signin2 {
+    display: inline-block;
+}
+
+.sign-in-button-container {
+    padding: 30vh 0 0 0;
+}
+
+.sign-out-button-container {
+    padding: 0 0 30vh 0;
+}

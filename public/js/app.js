@@ -29,7 +29,7 @@ require.config({
 		EventsManager: 'events-manager',
 		Router: 'router',
 		Components: 'components'
-	}
+    }
 });
 
 require([

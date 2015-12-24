@@ -24,7 +24,7 @@ define([
                 success: function () {
                     self.model.trigger('personalInfo:server-changed');
                 }
-            });            
+            }); 
         },
 		
 		render: function () {

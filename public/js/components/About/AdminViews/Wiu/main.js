@@ -8,13 +8,27 @@ define([
 	var component;
 	
 	component = Backbone.View.extend({
+		events: {
+            'click .save': 'save'
+        },
+        
 		initialize: function (options) {
+            self = this;
 			this.render();
-			options.styleLoader(module);
 		}, 
+        
+        save: function (e) {
+            this.model.set('wiu', this.$el.find('textarea').val());
+            this.model.save(null, { 
+                success: function () {
+                    self.model.trigger('wiu:server-changed');
+                }
+            }); 
+        },
 		
 		render: function () {
-			this.$el.html(_.template(tpl));
+            var compile = _.template(tpl);
+			this.$el.html(compile(this.model.toJSON()));
 		}
 	});
 	

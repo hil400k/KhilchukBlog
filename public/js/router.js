@@ -9,6 +9,7 @@ define([
 				'about': 'about',
 				'portfolio': 'portfolio',
 				'contacts': 'contacts',
+				'login': 'login',
                 '*other' : 'default'
 			}
 	});
@@ -44,6 +45,12 @@ define([
         router.on('route:articles', function () {
             require(['Components/Articles/main'], function (ArticlesPage) {
                var articlesPage = Viewport.create(appView.children.ContentView, 'Articles', ArticlesPage);
+            });
+        });
+        
+        router.on('route:login', function () {
+            require(['Components/Login/main'], function (LoginPage) {
+               var loginPage = Viewport.create(appView.children.ContentView, 'Login', LoginPage);
             });
         });
 	}

@@ -8,7 +8,10 @@ define([
 	var component;
 	
 	component = Backbone.View.extend({
+        el: '#page',
+        
 		initialize: function (options) {
+            this.$el.off();
 			this.render();
 			options.styleLoader(module);
 		}, 

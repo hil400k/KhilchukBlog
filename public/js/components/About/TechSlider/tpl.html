@@ -1,3 +1,4 @@
+<button type="button" data-toggle="modal" data-target="#myModal" class="btn admin-edit-btn" id="wiuImages"><span class="glyphicon glyphicon-picture"></span></button>
 <div class="controls">
 	<a class="to-top"><img src="../../../images/arrow-top.png" alt=""></a>
 	<a class="to-bottom"><img src="../../../images/arrow-top.png" alt=""></a>
@@ -5,21 +6,15 @@
 <div class="tech-slider">
 	<div class="dummy"></div>
 	<div class="wrap">
+	    <% for(var i = 0; i < paths.length; i +=2) { %>
 		<div class="part">
-			<div class="left"><img class="slider-img" src="../../../../images/html5.png"></div>
-			<div class="right"><img class="slider-img" src="../../../../images/css3.png"></div>
+			<div class="left"><img class="slider-img" src="<%= paths[i] %>"></div>
+			<div class="right">
+			    <% if (paths[i + 1]) { %>
+			        <img class="slider-img" src="<%= paths[i + 1] %>">
+			    <% } %>
+			 </div>
 		</div>
-		<div class="part">
-			<div class="left"><img class="slider-img" src="../../../../images/javascript.png"></div>
-			<div class="right"><img class="slider-img" src="../../../../images/jquery.png"></div>
-		</div>
-		<div class="part">
-			<div class="left"><img class="slider-img" src="../../../../images/backbone.png"></div>
-			<div class="right"><img class="slider-img" src="../../../../images/requirejs.png"></div>
-		</div>
-		<div class="part">
-			<div class="left"><img class="slider-img" src="../../../../images/bootstrap.png"></div>
-			<div class="right"></div>
-		</div>
+		<% }; %>
 	</div>
 </div>

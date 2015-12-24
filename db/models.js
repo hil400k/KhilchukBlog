@@ -1,3 +1,5 @@
 var models = [
-    require('./aboutModel')
+    require('./aboutModel'),
+    require('./sliderModel'),
+    require('./user')
 ];
