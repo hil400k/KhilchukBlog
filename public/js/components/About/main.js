@@ -3,6 +3,7 @@ define([
 	'jQuery',
 	'Underscore',
 	'Backbone',
+    'Settings',
 	'text!./tpl.html',
 	'./TechSlider/main',
 	'Viewport',
@@ -11,7 +12,7 @@ define([
     './AdminViews/PersonalInfo/main',
     './AdminViews/Wiu/main',
     './AdminViews/WorkItems/main'
-], function (module, $, _, Backbone, tpl, TechSlider, Viewport, AboutModel, EventsManager, PersonalInfo, Wiu, WorkItems) {
+], function (module, $, _, Backbone, Settings, tpl, TechSlider, Viewport, AboutModel, EventsManager, PersonalInfo, Wiu, WorkItems) {
 	var component, self, y
 	
 	component = Backbone.View.extend({
@@ -68,6 +69,7 @@ define([
             var data = this.model.toJSON(),
                 compile = _.template(tpl);
             
+            data.token = Settings.getAuthToken();
 			this.$el.html(compile(data));
 			this.techSlider = Viewport.create(this, 'TechSlider', TechSlider, {'el': this.$el.find('.slider-wrapper')}); 
             this.model.on('personalInfo:server-changed', this.personalInfoChanged, this);

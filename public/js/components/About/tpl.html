@@ -8,7 +8,9 @@
 					</div>
 					<div class="col-md-8">
 						<h3><spam class="name">DIMA</spam> <span class="surname">KHILCHUK</span>
+                            <% if (token) { %>
 						    <button type="button" data-toggle="modal" data-target="#myModal" class="btn admin-edit-btn" id="personalInfo"><span class="glyphicon glyphicon-pencil"></span></button>
+                            <% } %>
 						</h3>
 						<div class="introduction">
 							<p>
@@ -24,7 +26,9 @@
 					<div class="col-md-4"></div>
 					<div class="col-md-8">
 						<h3><spam class="name">WORK</spam> <span class="surname">EXPERIENCE</span>
+                            <% if (token) { %>
 						    <button type="button" data-toggle="modal" data-target="#myModal" class="btn admin-edit-btn" id="workItems"><span class="glyphicon glyphicon-pencil"></span></button>
+                            <% } %>
 						</h3>
 						<div class="work-experience-content">
 							<ul>
@@ -49,7 +53,9 @@
 							</div>
 							<div class="title-col">
 								<h3 class="title-caption">I use
-								    <button type="button" data-toggle="modal" data-target="#myModal" class="btn admin-edit-btn" id="wiu"><span class="glyphicon glyphicon-pencil"></span></button>								    
+                                    <% if (token) { %>
+								    <button type="button" data-toggle="modal" data-target="#myModal" class="btn admin-edit-btn" id="wiu"><span class="glyphicon glyphicon-pencil"></span></button>	
+                                    <% } %>
 								</h3>
 							</div>
 						</div>

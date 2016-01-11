@@ -36,7 +36,7 @@ var aboutApi = function (app, base) {
         });               
     });
     
-    app.put('/about/images', function (req, res) {
+    app.put('/about/images', isLoggedIn, function (req, res) {
         var removedOnClient = [], old = [], item = null;
         
         mongoose.model('sliderModel').findOne({}, function (err, model) {
@@ -68,7 +68,7 @@ var aboutApi = function (app, base) {
         }); 
     });
     
-    app.post('/about/images/upload', upload, function (req, res, next) {
+    app.post('/about/images/upload', isLoggedIn, upload, function (req, res, next) {
         var fpaths = [];
         if (req.files) {
             req.files.forEach(function(item) {
@@ -92,7 +92,7 @@ var aboutApi = function (app, base) {
        
     });
     
-    app.put('/about', function (req, res) {
+    app.put('/about', isLoggedIn, function (req, res) {
          mongoose.model('About').findById(req.body._id, function (err, m) {
             if (err) {
                 res.send(err);
@@ -109,8 +109,12 @@ var aboutApi = function (app, base) {
                 });                
             }
          });             
-    });
-    
+    });    
+}
+
+function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated())
+        return next();
 }
 
 module.exports = aboutApi;

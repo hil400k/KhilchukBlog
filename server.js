@@ -15,6 +15,7 @@ var base = __dirname;
 app.set('view engine', 'ejs');
 
 app.use(express.static(path.join(__dirname, 'public')));
+require('./config/passport')(passport);
 app.use(cookieParser());
 app.use(bodyParser());
 app.use(bodyParser.urlencoded());

@@ -1,10 +1,11 @@
 define([
 	'module',
-	'jQuery',
+	'jQuery',    
 	'Underscore',
 	'Backbone',
-	'text!./tpl.html'
-], function (module, $, _, Backbone, tpl) {
+    'Settings',
+	'text!./tpl.html',
+], function (module, $, _, Backbone, Settings, tpl) {
 	var component, self, auth2;
 	
 	component = Backbone.View.extend({
@@ -12,45 +13,28 @@ define([
         
 		initialize: function (options) {
             self = this;
-            this.$el.off();
+
+            this.$el.off();            
 			self.render();            
-			options.styleLoader(module);
+			options.styleLoader(module);            
 		}, 
         
         signIn: function () {
-            gapi.load('auth2', function() {
-                 gapi.signin2.render('my-signin2', {
-                    'scope': 'https://www.googleapis.com/auth/plus.login',
-                    'width': '300',
-                    'height': 50,
-                    'longtitle': true,
-                    'theme': 'dark'
-                  });
-                 gapi.auth2.init({
-                     fetch_basic_profile: true,
-                     client_id: '11599710881-3hhgtkl1bbrmcbv39umn64ngpgtr2g94.apps.googleusercontent.com',
-                     scope:'profile'
-                 }).then(function (){
-                     auth2 = gapi.auth2.getAuthInstance();
-                     auth2.isSignedIn.listen(self.updateSignIn.bind(self));
-                     auth2.then(self.updateSignIn.call(self));
-                 });
+            var logout;
+            $.get('/login/getUser', function (user) {
+                if(user) {
+                    self.$el.find('.sign-out-button-container').html('<br><a href="/logout" class="btn btn-default btn-sm btn-logout">Logout</a>');
+                    console.info(Settings.getAuthToken());
+                    if (!Settings.getAuthToken()) {
+                        Settings.setAuthTokenByServer(user.token);
+                    } 
+                    logout = self.$el.find('.sign-out-button-container .btn-logout');
+                    logout.off();
+                    logout.on('click', function(e) {
+                        Settings.removoAuthTokenFromCookies();
+                    });
+                }
             });
-        },
-        
-        updateSignIn: function () {
-             var btn;
-            
-             if (auth2.isSignedIn.get()) {
-                 this.$el.find('.sign-out-button-container').html('<br><button class="btn btn-primary">Sign out</button>');
-                 btn = this.$el.find('.sign-out-button-container .btn');
-                 btn.on('click', function () {
-                     auth2.signOut();
-                 });
-                 console.info(auth2.currentUser.get().getBasicProfile());
-             } else {
-                 self.$el.find('.sign-out-button-container').html('');
-             }
         },
 		
 		render: function () {

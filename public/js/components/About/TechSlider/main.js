@@ -3,11 +3,12 @@ define([
 	'jQuery',
 	'Underscore',
 	'Backbone',
+    'Settings',
     'EventsManager',
     '../AdminViews/WiuImages/main',
     '../sliderModel',
 	'text!./tpl.html'
-], function (module, $, _, Backbone, EventsManager, wiuImages, sliderModel, tpl) {
+], function (module, $, _, Backbone, Settings, EventsManager, wiuImages, sliderModel, tpl) {
 	var component, self;
 	
 	component = Backbone.View.extend({
@@ -33,8 +34,11 @@ define([
 		}, 
 		
 		render: function () {
-            var compile = _.template(tpl);
-			this.$el.html(compile(this.model.toJSON()));
+            var compile = _.template(tpl),
+                data = this.model.toJSON();
+            
+            data.token = Settings.getAuthToken();
+			this.$el.html(compile(data));
             this.model.on('change', this.render, this);
 		},
         

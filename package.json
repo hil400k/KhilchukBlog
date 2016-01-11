@@ -12,7 +12,7 @@
     "requirejs-text": "*",
     "underscore": "*",
     "passport" : "~0.1.17",
-    "passport-google-oauth" : "~0.1.5",
+    "passport-google-oauth" : "*",
     "connect-flash" : "~0.1.1",     
     "bcrypt-nodejs" : "latest",
     "morgan": "~1.0.0",
