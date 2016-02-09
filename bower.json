@@ -1,0 +1,12 @@
+{
+  "name": "khilchuk-blog",
+  "dependencies": {
+    "jquery": "*",
+    "bootstrap": "*",
+    "jqcookie": "*",
+    "backbone": "*",
+    "requirejs": "*",
+    "requirejs-text": "*",
+    "underscore": "*"
+  }
+}

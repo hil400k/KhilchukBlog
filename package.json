@@ -1,11 +1,8 @@
 {
   "dependencies": {
-    "backbone": "*",
     "body-parser": "*",
-    "bootstrap": "*",
     "ejs": "*",
     "express": "*",
-    "jquery": "*",
     "mongoose": "*",
     "multer": "^1.1.0",
     "requirejs": "*",
