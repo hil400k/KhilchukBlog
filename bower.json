@@ -3,7 +3,6 @@
   "dependencies": {
     "jquery": "*",
     "bootstrap": "*",
-    "jqcookie": "*",
     "backbone": "*",
     "requirejs": "*",
     "requirejs-text": "*",
