@@ -165,7 +165,7 @@ define([
             return 0; 
         },
         
-        buttonHandler: function (e) {
+        buttonHandler: function (e) { console.info('sdfsdfsd');
             var $button = this.$el.find('.input-component button'),
                 $tarea = this.$el.find('.input-component textarea'),
                 text, option, placeholder;

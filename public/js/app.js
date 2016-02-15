@@ -17,15 +17,10 @@ require.config({
             deps: [
                 'jQuery'
             ]
-        },
-        jQCookie: {
-            deps: [
-                'jQuery'
-            ]
         }
 	},
 	paths: {
-        jQCookie: '../libs/jqcookie/jqcookie',
+        Cookies: '../libs/js-cookie/src/js.cookie',
         Bootstrap: '../libs/bootstrap/dist/js/bootstrap',
 		jQuery: '../libs/jquery/dist/jquery',
 		Underscore: '../libs/underscore/underscore',

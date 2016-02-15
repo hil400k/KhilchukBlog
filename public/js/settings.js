@@ -1,8 +1,8 @@
 define([
     'jQuery',
 	'Backbone',
-    'jQCookie'
-], function ($, Backbone) {
+    'Cookies'
+], function ($, Backbone, Cookies) {
     var token = null;
     
     return {
@@ -11,8 +11,8 @@ define([
         },
         
         setAuthTokenByCookies: function() {
-            if ($.cookie('token')) {
-                token = $.cookie('token');
+            if (Cookies.get('token')) {
+                token = Cookies.get('token');
                 return true;
             }
             
@@ -22,13 +22,13 @@ define([
         setAuthTokenByServer: function(newToken) {
             if (newToken) {
                 token = newToken;
-                $.cookie('token', token);
+                Cookies.set('token', token);
             }            
         },
         
         removoAuthTokenFromCookies: function() {
             token = null;
-            $.removeCookie('token');
+            Cookies.remove('token');
         }        
     }
 });

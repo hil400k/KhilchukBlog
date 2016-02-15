@@ -1,11 +1,12 @@
 {
   "name": "khilchuk-blog",
   "dependencies": {
-    "jquery": "*",
-    "bootstrap": "*",
-    "backbone": "*",
-    "requirejs": "*",
-    "requirejs-text": "*",
-    "underscore": "*"
+    "jquery": "~2.2.0",
+    "bootstrap": "~3.3.6",
+    "backbone": "~1.1.2",
+    "requirejs": "~2.1.22",
+    "requirejs-text": "~2.0.14",
+    "underscore": "~1.8.3",
+    "js-cookie": "~2.1.0"
   }
 }

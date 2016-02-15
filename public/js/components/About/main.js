@@ -40,7 +40,7 @@ define([
             });            
 		},
         
-        scrollBottomDescription: function (e) {
+        scrollBottomDescription: function (e) {console.info('he');
             var movable = this.$el.find('.description > p'),
                 textHeight = movable.height(),
                 descHeight = this.$el.find('.description').height() - 5;
