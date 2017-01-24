@@ -4,18 +4,18 @@ define([
     'Backbone'
 ], function ($, _, Backbone) {
     var aboutModel;
-    
+
     aboutModel = Backbone.Model.extend({
         defaults: {
             'personalInfo': '',
             'workItems': [],
             'wiu': ''
         },
-        
+
         idAttribute: '_id',
-        
-        url: '/about'
+
+        url: './js/components/About/about.json'
     });
-    
+
     return aboutModel;
 });

@@ -1,0 +1,11 @@
+{
+  "paths": [
+    "./images/wiuImages/backbone.png",
+    "./images/wiuImages/bootstrap.png",
+    "./images/wiuImages/css3.png",
+    "./images/wiuImages/html5.png",
+    "./images/wiuImages/javascript.png",
+    "./images/wiuImages/jquery.png",
+    "./images/wiuImages/requirejs.png"
+  ]
+}
